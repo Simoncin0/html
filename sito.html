@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Esercizio 5 - Sito personale</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    /* Stile base per leggibilità */
+    body { font-family: Arial, sans-serif; line-height:1.5; margin:0; padding:0 1rem; color:#222; }
+    header, footer { background:#f4f4f4; padding:1rem; }
+    nav a { margin-right:1rem; text-decoration:none; color:#0366d6; }
+    main { max-width:900px; margin:1rem auto; }
+    .profile { display:flex; gap:1rem; align-items:center; flex-wrap:wrap; }
+    .profile img { border-radius:8px; width:160px; height:160px; object-fit:cover; }
+    section { margin:1rem 0; }
+    table { border-collapse:collapse; width:100%; max-width:700px; }
+    th, td { border:1px solid #ccc; padding:.5rem; text-align:center; }
+    fieldset { border:1px solid #ccc; padding: .75rem; }
+    footer { text-align:center; font-size:.9rem; }
+    .top-link { display:inline-block; margin-top:1rem; }
+  </style>
+</head>
+<body>
+
+  <!-- link per riportare in cima -->
+  <a id="top"></a>
+
+  <header>
+    <h1>Simone Pieragostino</h1>
+    <nav aria-label="Menu principale">
+      <!-- link fittizi -->
+      <a href="#chi-sono">Chi sono</a>
+      <a href="#hobby">Hobby</a>
+      <a href="#orario">Orario</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- immagine profilo + breve -->
+    <section class="profile" aria-labelledby="chi-sono">
+      <img src="Simone.png" alt="Foto profilo di Nome Cognome">
+      <div>
+        <h2 id="chi-sono">Chi sono</h2>
+        <p>
+          Ciao! Mi chiamo <strong>Simone Pieragostino</strong>, sono uno studente di cybersecurity all'interno dell'ITS di Lanciano . Studio, progetto piccoli siti e mi piace imparare nuove
+          cose ogni giorno.
+        </p>
+        <!-- link che apre in nuova scheda -->
+        <p><a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">Visita MDN Web Docs (si apre in nuova scheda)</a></p>
+      </div>
+    </section>
+
+    <!-- Hobby -->
+    <section id="hobby">
+      <h2>Hobby</h2>
+      <ul>
+        <li>Calcio</li>
+        <li>Nuoto</li>
+        <li>Cibo</li>
+      </ul>
+    </section>
+
+    <!-- Orario scolastico -->
+    <!-- Orario scolastico -->
+<section id="orario" aria-labelledby="orario-title">
+  <h2 id="orario-title">Orario scolastico</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Ora</th>
+        <th>Lunedì</th>
+        <th>Martedì</th>
+        <th>Mercoledì</th>
+        <th>Giovedì</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>08:30 - 13:30</td>
+        <td>HTML - CSS</td>
+        <td>HTML - CSS</td>
+        <td>HTML - CSS</td>
+        <td>REACT - Angular</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+    <!-- Video YouTube incorporato -->
+    <section aria-labelledby="video-title">
+      <h2 id="video-title">Video consigliato</h2>
+      <!-- esempio di iframe YouTube (dimensioni responsivi semplici) -->
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;">
+        <iframe
+          src="https://www.youtube.com/embed/M7lc1UVf-VE"
+          title="Video dimostrativo"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Form di contatto in fondo -->
+    <section id="contatto" aria-labelledby="contatto-title">
+      <h2 id="contatto-title">Contattami</h2>
+
+      <form action="#" method="post" style="max-width:700px;">
+        <fieldset>
+          <legend>Dati contatto</legend>
+
+          <label for="nome">Nome:</label><br>
+          <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+          <br><br>
+
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" placeholder="tua@email.it" required>
+          <br><br>
+
+          <label for="messaggio">Messaggio:</label><br>
+          <textarea id="messaggio" name="messaggio" rows="6" cols="50" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+          <br><br>
+
+          <input type="submit" value="Invia">
+        </fieldset>
+      </form>
+    </section>
+
+    <!-- link interno che riporta in cima -->
+    <p class="top-link"><a href="#top">Torna su ↑</a></p>
+  </main>
+
+  <footer>
+    <p>Contatti: <a href="mailto:pieragostinoe@gmail.com">pieragostinoe@gmail.com</a> • Tel: 388 6353702</p>
+    <p>© <span id="anno"></span> Simone Pieragostino. Tutti i diritti riservati.</p>
+  </footer>
+
+  <script>
+    // Imposta anno corrente nel footer
+    document.getElementById('anno').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
